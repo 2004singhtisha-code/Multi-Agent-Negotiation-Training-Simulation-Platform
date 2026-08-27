@@ -28,4 +28,33 @@ An intelligent, multi-agent negotiation platform powered by Generative AI. Built
 - **Backend**: FastAPI (Python 3.12), Pydantic v2, Uvicorn
 - **Database**: MongoDB (via Motor async client with automatic in-memory fallback)
 - **Vector DB / RAG**: Dedicated in-memory vector retriever with TF-IDF similarity
-- **LLM Layer**: Agnostic interface supporting Gemini API (`google-generativeai`), OpenAI API, and Custom Reasoning Engine fallback.
+- **LLM Layer**: Agnostic interface supporting Gemini API (`google-generativeai`) and Custom Reasoning Engine fallback.
+
+## How to Setup and Run the Application
+
+The platform requires running the FastAPI backend and React frontend. Open two separate VS Code terminal windows:
+
+**Terminal 1: Start FastAPI Backend**
+
+```bash
+# Activate virtual environment
+.\venv\Scripts\activate
+
+# Navigate to backend directory
+cd backend
+
+# Run FastAPI dev server using Uvicorn
+python -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload
+```
+
+**Terminal 2: Start React Frontend**
+
+```bash
+# Navigate to frontend directory
+cd frontend
+
+# Run Vite development server
+npm run dev
+```
+
+Access the application in your web browser at **http://localhost:3000**.
